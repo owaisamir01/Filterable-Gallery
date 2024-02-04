@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="box">
+        <a href="#" class="btn" data-filter="all"  >ALL</a>
+        <a href="#" class="btn" data-filter="logo"  >Logo</a>
+        <a href="#" class="btn" data-filter="web"  >web</a>
+    </div>
+    <div class="store-item logo">
+        <img src="1.jpg" alt="" class="img storeimages">
+        <img src="2.jpg" alt="" class="img storeimages">
+        <img src="3.jpg" alt="" class="img storeimages">   
+    </div>
+    <div class="store-item web">
+        <img src="w1.jpg" alt="" class="img storeimages">
+        <img src="w2.jpg" alt="" class="img storeimages">
+        <img src="w3.jpg" alt="" class="img storeimages">   
+    </div>
+    <script>
+        const buttons=document.querySelectorAll('.btn');
+        const storeimages=document.querySelectorAll('.store-item')
+       buttons.forEach(function(button){
+        button.addEventListener('click',(e)=>{
+            e.preventDefault();
+            const filter=e.target.dataset.filter;
+            storeimages.forEach((item)=>{
+                if(filter==='all'){
+                    item.style.display='block'
+                }
+                else{
+                    if(item.classList.contains(filter)){
+                        item.style.display='block';
+                    }
+                    else{
+                     item.style.display='none'   
+                    }
+                }
+            })
+        })
+       })
+    
+    
+    
+    
+    
+    
+    
+    
+    </script>
+    
+    
+</body>
+</html>
